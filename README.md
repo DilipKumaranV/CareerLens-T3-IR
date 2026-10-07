@@ -175,12 +175,38 @@ The frontend never trusts an API response shape unchecked, an error boundary sho
 * Career Fit is a transparent heuristic with hand-set weights (75/25), not a prediction of hiring success. Resume parsing is rule-based and assumes a conventional layout; always review the extracted profile.
 * Startup takes about 30 to 60 s the first time (index build), then about 6 s.
 
-## 11. Future work
+## 11. Future Work
 
-Description text if a richer dataset is used; learned weights (learning to rank) on human judgments; experience and seniority matching; linking postings to a skills taxonomy as an *optional* enrichment (never a filter); dense retrieval as a second signal.
+CareerLens will be continued as the CSD358 course project with a stronger focus on data analysis and evidence-driven career insights. The next phase will extend the current retrieval and personalization system with deeper analysis of the job-market data.
 
-## 12. AI-use declaration
+Planned extensions include:
 
-Claude (Anthropic) was used in a conversational coding session to design the architecture, write the backend, front end, tests and documentation, and to debug. It also ran the tests, the evaluation and a headless-browser end-to-end test. The team reviewed and directed the work. **Edit this paragraph to match exactly what your team did.** No language model or neural network runs inside CareerLens: all retrieval, scoring, resume parsing and matching are classical, deterministic code. Libraries: FastAPI, Pydantic, NLTK (Porter stemmer only), pypdf, React, Vite, Recharts, lucide-react; reportlab and pytest for development.
+- **Job-market data analysis:** Analyze job postings to identify trends in roles, skills, companies, locations, work types and their relationships.
 
-An earlier version of this project used the EU's ESCO classification as an optional vocabulary; it was removed because it filtered out valid skills.
+- **Skill demand analysis:** Measure how frequently skills occur across roles and identify high-demand, emerging and declining skills.
+
+- **Role and skill relationships:** Analyze which skills are commonly associated with specific job roles and how skill combinations vary across roles.
+
+- **Geographic analysis:** Study differences in job demand and skill requirements across countries, regions and locations available in the dataset.
+
+- **Company-level analysis:** Analyze hiring patterns, frequently requested skills and role distributions across companies.
+
+- **Career-path analysis:** Use the analyzed job and skill relationships to identify possible transitions between roles and the skills required for those transitions.
+
+- **Time-based analysis:** Where sufficient historical data is available, analyze changes in skill and role demand over time.
+
+- **Data-driven personalization:** Use the results of the data analysis to improve Career Fit, skill-gap explanations and target-role recommendations.
+
+- **Advanced retrieval:** Explore learned ranking, dense retrieval and hybrid retrieval as additional signals while retaining the current interpretable IR pipeline.
+
+The long-term goal is to combine Information Retrieval with systematic job-market data analysis so that CareerLens not only retrieves relevant jobs but also provides evidence-based insights into skills, roles and possible career paths.
+
+## 12. AI-Use Declaration
+
+Claude (Anthropic) was used during the development of CareerLens as a coding and development assistant. It was used to support architecture design, backend and frontend implementation, test development, documentation, debugging, evaluation and end-to-end testing. The team reviewed, directed and integrated the generated work into the final system.
+
+No language model or neural network runs inside CareerLens at runtime. The retrieval, ranking, resume parsing and career matching implemented in the submitted system use classical Information Retrieval and deterministic methods.
+
+The project uses the following main libraries and frameworks: FastAPI, Pydantic, NLTK (Porter stemmer), pypdf, React, Vite, Recharts, lucide-react, ReportLab and pytest.
+
+An earlier version of the project used the EU ESCO classification as an optional vocabulary. It was subsequently removed because it could filter out valid skills.
