@@ -1,0 +1,554 @@
+{
+ "description": "Relevance judgments for the CareerLens evaluation. They are RULES over structured fields of the dataset, fixed before any system was compared. role_family is the dataset's own label (job_title_short); it is NOT part of the text the engine searches (Title, Skills, Location, Company), so a role query is not trivially solved by matching its own label. Grade 2 (relevant) = every rule in 'must' and 'should' holds; grade 1 (partially relevant) = only 'must' holds. Precision, recall and AP count grade 2 only; nDCG uses both grades. Rule keys: role_family (one of), country (one of), company (case-insensitive, one of), skills_all (listing lists every skill), skills_any (lists at least one). Limits: relevance is defined by metadata, not by a human reading each posting; the 'skills only' queries are close to circular because skills are what the Skills zone indexes. Split: within each query type the judged queries alternate dev/test (fixed before tuning). Weights are tuned on dev only; test is held out.",
+ "queries": [
+  {
+   "id": "r01",
+   "query": "data analyst",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Data Analyst",
+     "Senior Data Analyst"
+    ]
+   },
+   "should": {},
+   "split": "dev"
+  },
+  {
+   "id": "r02",
+   "query": "data engineer",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Data Engineer",
+     "Senior Data Engineer"
+    ]
+   },
+   "should": {},
+   "split": "test"
+  },
+  {
+   "id": "r03",
+   "query": "data scientist",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Data Scientist",
+     "Senior Data Scientist"
+    ]
+   },
+   "should": {},
+   "split": "dev"
+  },
+  {
+   "id": "r04",
+   "query": "business analyst",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Business Analyst"
+    ]
+   },
+   "should": {},
+   "split": "test"
+  },
+  {
+   "id": "r05",
+   "query": "software engineer",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Software Engineer"
+    ]
+   },
+   "should": {},
+   "split": "dev"
+  },
+  {
+   "id": "r06",
+   "query": "machine learning engineer",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Machine Learning Engineer"
+    ]
+   },
+   "should": {},
+   "split": "test"
+  },
+  {
+   "id": "r07",
+   "query": "cloud engineer",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Cloud Engineer"
+    ]
+   },
+   "should": {},
+   "split": "dev"
+  },
+  {
+   "id": "r08",
+   "query": "senior data scientist",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Senior Data Scientist"
+    ]
+   },
+   "should": {},
+   "split": "test"
+  },
+  {
+   "id": "r09",
+   "query": "senior data engineer",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Senior Data Engineer"
+    ]
+   },
+   "should": {},
+   "split": "dev"
+  },
+  {
+   "id": "r10",
+   "query": "senior data analyst",
+   "type": "role",
+   "must": {
+    "role_family": [
+     "Senior Data Analyst"
+    ]
+   },
+   "should": {},
+   "split": "test"
+  },
+  {
+   "id": "l01",
+   "query": "data engineer in germany",
+   "type": "role + country",
+   "must": {
+    "role_family": [
+     "Data Engineer",
+     "Senior Data Engineer"
+    ]
+   },
+   "should": {
+    "country": [
+     "Germany"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "l02",
+   "query": "data analyst in india",
+   "type": "role + country",
+   "must": {
+    "role_family": [
+     "Data Analyst",
+     "Senior Data Analyst"
+    ]
+   },
+   "should": {
+    "country": [
+     "India"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "l03",
+   "query": "cloud engineer in united kingdom",
+   "type": "role + country",
+   "must": {
+    "role_family": [
+     "Cloud Engineer"
+    ]
+   },
+   "should": {
+    "country": [
+     "United Kingdom"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "l04",
+   "query": "software engineer in france",
+   "type": "role + country",
+   "must": {
+    "role_family": [
+     "Software Engineer"
+    ]
+   },
+   "should": {
+    "country": [
+     "France"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "l05",
+   "query": "data scientist in singapore",
+   "type": "role + country",
+   "must": {
+    "role_family": [
+     "Data Scientist",
+     "Senior Data Scientist"
+    ]
+   },
+   "should": {
+    "country": [
+     "Singapore"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "l06",
+   "query": "business analyst in united states",
+   "type": "role + country",
+   "must": {
+    "role_family": [
+     "Business Analyst"
+    ]
+   },
+   "should": {
+    "country": [
+     "United States"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "l07",
+   "query": "machine learning engineer in canada",
+   "type": "role + country",
+   "must": {
+    "role_family": [
+     "Machine Learning Engineer"
+    ]
+   },
+   "should": {
+    "country": [
+     "Canada"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "l08",
+   "query": "cloud engineer in spain",
+   "type": "role + country",
+   "must": {
+    "role_family": [
+     "Cloud Engineer"
+    ]
+   },
+   "should": {
+    "country": [
+     "Spain"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "s01",
+   "query": "data engineer spark airflow",
+   "type": "role + skills",
+   "must": {
+    "role_family": [
+     "Data Engineer",
+     "Senior Data Engineer"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "spark",
+     "airflow"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "s02",
+   "query": "data scientist python tensorflow",
+   "type": "role + skills",
+   "must": {
+    "role_family": [
+     "Data Scientist",
+     "Senior Data Scientist"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "python",
+     "tensorflow"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "s03",
+   "query": "cloud engineer aws terraform",
+   "type": "role + skills",
+   "must": {
+    "role_family": [
+     "Cloud Engineer"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "aws",
+     "terraform"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "s04",
+   "query": "data analyst power bi sql",
+   "type": "role + skills",
+   "must": {
+    "role_family": [
+     "Data Analyst",
+     "Senior Data Analyst"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "power bi",
+     "sql"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "s05",
+   "query": "business analyst tableau excel",
+   "type": "role + skills",
+   "must": {
+    "role_family": [
+     "Business Analyst"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "tableau",
+     "excel"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "s06",
+   "query": "software engineer java react",
+   "type": "role + skills",
+   "must": {
+    "role_family": [
+     "Software Engineer"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "java",
+     "react"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "c01",
+   "query": "data scientist at amazon",
+   "type": "role + company",
+   "must": {
+    "role_family": [
+     "Data Scientist",
+     "Senior Data Scientist"
+    ]
+   },
+   "should": {
+    "company": [
+     "Amazon"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "c02",
+   "query": "cloud engineer at amazon",
+   "type": "role + company",
+   "must": {
+    "role_family": [
+     "Cloud Engineer"
+    ]
+   },
+   "should": {
+    "company": [
+     "Amazon"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "c03",
+   "query": "data engineer at deloitte",
+   "type": "role + company",
+   "must": {
+    "role_family": [
+     "Data Engineer",
+     "Senior Data Engineer"
+    ]
+   },
+   "should": {
+    "company": [
+     "Deloitte"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "c04",
+   "query": "software engineer at microsoft",
+   "type": "role + company",
+   "must": {
+    "role_family": [
+     "Software Engineer"
+    ]
+   },
+   "should": {
+    "company": [
+     "Microsoft"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "c05",
+   "query": "data analyst at accenture",
+   "type": "role + company",
+   "must": {
+    "role_family": [
+     "Data Analyst",
+     "Senior Data Analyst"
+    ]
+   },
+   "should": {
+    "company": [
+     "Accenture"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "c06",
+   "query": "data engineer at google",
+   "type": "role + company",
+   "must": {
+    "role_family": [
+     "Data Engineer",
+     "Senior Data Engineer"
+    ]
+   },
+   "should": {
+    "company": [
+     "Google"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "k01",
+   "query": "terraform kubernetes",
+   "type": "skills only",
+   "must": {
+    "skills_any": [
+     "terraform",
+     "kubernetes"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "terraform",
+     "kubernetes"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "k02",
+   "query": "aws terraform",
+   "type": "skills only",
+   "must": {
+    "skills_any": [
+     "aws",
+     "terraform"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "aws",
+     "terraform"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "k03",
+   "query": "power bi dax",
+   "type": "skills only",
+   "must": {
+    "skills_any": [
+     "power bi",
+     "dax"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "power bi",
+     "dax"
+    ]
+   },
+   "split": "dev"
+  },
+  {
+   "id": "k04",
+   "query": "pytorch tensorflow",
+   "type": "skills only",
+   "must": {
+    "skills_any": [
+     "pytorch",
+     "tensorflow"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "pytorch",
+     "tensorflow"
+    ]
+   },
+   "split": "test"
+  },
+  {
+   "id": "k05",
+   "query": "spark kafka",
+   "type": "skills only",
+   "must": {
+    "skills_any": [
+     "spark",
+     "kafka"
+    ]
+   },
+   "should": {
+    "skills_all": [
+     "spark",
+     "kafka"
+    ]
+   },
+   "split": "dev"
+  }
+ ]
+}

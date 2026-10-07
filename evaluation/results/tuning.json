@@ -1,0 +1,97 @@
+{
+ "objective": "mean AP@5 on the dev queries",
+ "grid": [
+  {
+   "company": 0.4,
+   "location": 0.15,
+   "w_jaccard": 0.35,
+   "dev_AP@5": 0.8627777777777778,
+   "dev_P@5": 0.9111111111111111
+  },
+  {
+   "company": 0.4,
+   "location": 0.3,
+   "w_jaccard": 0.35,
+   "dev_AP@5": 0.8577777777777778,
+   "dev_P@5": 0.9111111111111111
+  },
+  {
+   "company": 0.4,
+   "location": 0.15,
+   "w_jaccard": 0.15,
+   "dev_AP@5": 0.8488888888888889,
+   "dev_P@5": 0.9
+  },
+  {
+   "company": 0.4,
+   "location": 0.3,
+   "w_jaccard": 0.15,
+   "dev_AP@5": 0.8488888888888889,
+   "dev_P@5": 0.9
+  },
+  {
+   "company": 0.25,
+   "location": 0.15,
+   "w_jaccard": 0.35,
+   "dev_AP@5": 0.8394444444444444,
+   "dev_P@5": 0.8777777777777778
+  },
+  {
+   "company": 0.25,
+   "location": 0.3,
+   "w_jaccard": 0.35,
+   "dev_AP@5": 0.8344444444444444,
+   "dev_P@5": 0.8777777777777778
+  },
+  {
+   "company": 0.25,
+   "location": 0.15,
+   "w_jaccard": 0.15,
+   "dev_AP@5": 0.8201851851851851,
+   "dev_P@5": 0.8666666666666667
+  },
+  {
+   "company": 0.25,
+   "location": 0.3,
+   "w_jaccard": 0.15,
+   "dev_AP@5": 0.8201851851851851,
+   "dev_P@5": 0.8666666666666667
+  },
+  {
+   "company": 0.1,
+   "location": 0.15,
+   "w_jaccard": 0.35,
+   "dev_AP@5": 0.8127777777777778,
+   "dev_P@5": 0.8444444444444444
+  },
+  {
+   "company": 0.1,
+   "location": 0.3,
+   "w_jaccard": 0.35,
+   "dev_AP@5": 0.8077777777777778,
+   "dev_P@5": 0.8444444444444444
+  },
+  {
+   "company": 0.1,
+   "location": 0.15,
+   "w_jaccard": 0.15,
+   "dev_AP@5": 0.8061111111111111,
+   "dev_P@5": 0.8555555555555555
+  },
+  {
+   "company": 0.1,
+   "location": 0.3,
+   "w_jaccard": 0.15,
+   "dev_AP@5": 0.8061111111111111,
+   "dev_P@5": 0.8555555555555555
+  }
+ ],
+ "chosen": {
+  "company": 0.4,
+  "location": 0.15,
+  "w_jaccard": 0.35,
+  "dev_AP@5": 0.8627777777777778,
+  "dev_P@5": 0.9111111111111111
+ },
+ "note": "Title and Skills weights were left at their priors (0.45, 0.30)."
+}

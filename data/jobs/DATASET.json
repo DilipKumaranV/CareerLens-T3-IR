@@ -1,0 +1,118 @@
+{
+  "source": "lukebarousse/data_jobs (Hugging Face)",
+  "source_url": "https://huggingface.co/datasets/lukebarousse/data_jobs",
+  "license": "Apache-2.0 (as stated on the dataset card)",
+  "raw_rows": 785741,
+  "dropped_rows": 117037,
+  "drop_reasons": {
+    "no skills": 117036,
+    "no title": 1
+  },
+  "usable_rows": 668704,
+  "unique_listings": 516037,
+  "reposts_merged": 152667,
+  "working_rule": {
+    "keep_all": "listings whose title matches cloud|devops|architect|infrastructure|\\bsre\\b|site reliability|platform engineer|sysadmin|system administrator|systems administrator|network",
+    "plus_sample_per_role_label": 4000,
+    "seed": 13,
+    "note": "convenience sample; over-represents cloud/infrastructure roles"
+  },
+  "family_listings": 18952,
+  "working_listings": 58952,
+  "postings_represented": 72580,
+  "companies": 25895,
+  "countries": 146,
+  "role_labels": {
+    "Data Engineer": 10962,
+    "Cloud Engineer": 7740,
+    "Software Engineer": 7365,
+    "Senior Data Engineer": 5823,
+    "Data Analyst": 5409,
+    "Data Scientist": 4731,
+    "Business Analyst": 4343,
+    "Machine Learning Engineer": 4213,
+    "Senior Data Scientist": 4186,
+    "Senior Data Analyst": 4180
+  },
+  "distinct_skills": 240,
+  "top_skills": [
+    [
+      "python",
+      31406
+    ],
+    [
+      "sql",
+      28018
+    ],
+    [
+      "aws",
+      17074
+    ],
+    [
+      "azure",
+      15632
+    ],
+    [
+      "spark",
+      9983
+    ],
+    [
+      "java",
+      8964
+    ],
+    [
+      "tableau",
+      8001
+    ],
+    [
+      "excel",
+      7946
+    ],
+    [
+      "r",
+      7758
+    ],
+    [
+      "kubernetes",
+      7106
+    ],
+    [
+      "gcp",
+      6726
+    ],
+    [
+      "docker",
+      6392
+    ],
+    [
+      "power bi",
+      6230
+    ],
+    [
+      "kafka",
+      5487
+    ],
+    [
+      "git",
+      5464
+    ]
+  ],
+  "skills_per_listing_mean": 5.74,
+  "remote_share": 0.095,
+  "with_salary_year": 1572,
+  "posted_range": [
+    "2023-01-01",
+    "2023-12-31"
+  ],
+  "missing_in_working": {
+    "location": 86,
+    "schedule": 819,
+    "country": 9
+  },
+  "fields_absent_from_source": [
+    "job description",
+    "required experience / seniority field",
+    "job URL",
+    "department"
+  ]
+}
